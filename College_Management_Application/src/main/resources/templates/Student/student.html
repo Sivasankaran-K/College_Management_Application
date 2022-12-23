@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Module</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style type="text/css">
+label {
+	display: inline-block;
+	width: 100px;
+	margin: 5px;
+	text-align: left;
+    color: black;
+    
+}
+body{
+    
+    background-image: url(images/clg2.jpeg);
+    background-size: 100%;
+    position: relative;
+}
+form {
+   
+  border-radius: 10px;
+  background-color: #fefefe1c;
+  padding: 15px;
+  box-shadow: 10px 10px 30px;
+  border: 2px solid rgb(254, 254, 254);
+  width: 1500px;
+  
+  }
+</style>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+		<a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewAbout}">About Us</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewContact}">Contact</a>
+			</ul>
+		</div>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/LoginPage}">Login</a>
+			</ul>
+		</div>
+
+
+	</nav>
+	<div class="container text-center">
+		<h2>Welcome to Student Module!!!</h2>
+
+		<div class="m-3">
+			<a th:href="@{/ViewAllStudentBystudent}"
+				class="btn btn-outline-primary">View All Student Details</a>
+
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

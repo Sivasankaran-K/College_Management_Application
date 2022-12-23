@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Faculty Details</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style type="text/css">
+body {
+    background-image: url(../../images/faculty2.png);
+     background-attachment:fixed;
+    background-size: 100%;
+    position: relative;
+}
+h2{
+color:white;
+}
+form {
+   
+  border-radius: 10px;
+  background-color: #fefefe1c;
+  padding: 15px;
+  box-shadow: 10px 10px 30px;
+  border: 2px solid rgb(254, 254, 254);
+  width: 1500px;
+  }
+  label {
+	display: inline-block;
+	width: 100px;
+	margin: 5px;
+	text-align: left;
+    color:white;
+    
+}
+p{
+color:red;
+}
+</style>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		
+		<a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewAbout}">About Us</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewContact}">Contact</a>
+			</ul>
+		</div>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/LoginPage}">Login</a>
+			</ul>
+		</div>
+
+
+	</nav>
+
+	<div class="container text-center">
+		<h2>Faculty Details</h2>
+		
+		<form
+			th:action="@{/Faculty/{Faculty_Id}(Faculty_Id=${staff_registration.Faculty_Id})}"
+			method="post" th:object="${staff_registration}"
+			style="max-width: 700px; margin: 0 auto;">
+			<div class="m-3">
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="faculty_Id">Faculty
+						ID</label>
+
+					<div class="col-5">
+						<input type="number" th:field="*{faculty_Id}" name="faculty_Id"
+							id="faculty_Id" required class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="faculty_Name">Faculty
+						Name</label>
+					<div class="col-5">
+						<input type="text" th:field="*{faculty_Name}" name="faculty_Name"
+							id="faculty_Name" required class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="designation">Designation</label>
+					<div class="col-5">
+						<input type="text" th:field="*{designation}" name="designation"
+							id="designation" required class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="educational_Qualification">Educational
+						Qualification</label>
+					<div class="col-5">
+						<input type="text" th:field="*{educational_Qualification}"
+							name="educational_Qualification" id="educational_Qualification"
+							required class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="date_Of_Birth">Date
+						of Birth</label>
+					<div class="col-5">
+						<input type="date" th:field="*{date_Of_Birth}"
+							name="date_Of_Birth" id="date_Of_Birth" required
+							class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="blood_Group">Blood
+						Group</label>
+					<div class="col-5">
+						<input type="text" th:field="*{blood_Group}" name="blood_Group"
+							id="blood_Group" required class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="address">Address</label>
+					<div class="col-5">
+						<textarea name="address" th:field="*{address}" id="address"
+							required class="form-control" readonly></textarea>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="gender">Gender</label>
+					
+
+					<input type="radio" name="gender" th:field="*{gender}" id="gender"
+						value="Male" required disabled> <label for="male">Male</label>
+
+
+					<input type="radio" name="gender" th:field="*{gender}" id="gender"
+						value="Female" required disabled> <label for="female">Female</label>
+
+
+				</div>
+
+
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="contact_Number">Contact
+						Number</label>
+					<div class="col-5">
+						<input type="number" th:field="*{contact_Number}"
+							name="contact_Number" id="contact_Number" required
+							class="form-control" readonly>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="email">Email</label>
+					<div class="col-5">
+						<input type="email" th:field="*{email}" name="email" id="email"
+							required class="form-control" readonly>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-4" for="salary">Salary</label>
+					<div class="col-5">
+						<input type="number" th:field="*{salary}" name="salary"
+							id="salary" required class="form-control" readonly>
+					</div>
+
+				</div>
+
+			</div>
+		</form>
+        <br>
+        <div>
+     <p><b>Note:<i>If you want to change any detail please contact admin </i></b></p>
+     </div>
+		<div>
+			<a href="/ViewAllFacultybyFaculty" class="btn btn-primary">Go
+				Back</a>
+		</div>
+	</div>
+
+</body>
+</html>

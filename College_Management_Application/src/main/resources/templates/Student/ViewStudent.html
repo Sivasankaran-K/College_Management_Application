@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html  xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Student</title>
+<link rel ="stylesheet" type = "text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style type="text/css">
+     label {
+	display: inline-block;
+	width: 100px;
+	margin: 5px;
+	text-align: left;
+    color: white;
+    
+}
+h2{
+  color:white;
+}
+body{
+    
+    background-image: url(../../images/sv.jpg);
+    background-size: 100%;
+    position: relative;
+    background-attachment:fixed;
+}
+form {
+   
+  border-radius: 10px;
+  background-color: #fefefe1c;
+  padding: 15px;
+  box-shadow: 10px 10px 30px;
+  border: 2px solid rgb(254, 254, 254);
+  width: 1500px;
+  
+  }
+  p{
+  color:red;
+  }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  
+  <a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Home</a>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/ViewAbout}">About Us</a>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/ViewContact}">Contact</a>
+    </ul>
+  </div>
+  
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/LoginPage}">Login</a>
+    </ul>
+  </div>
+  
+  
+</nav>
+<div class = "container text-center">
+  <h2>Student Details</h2>
+    <form  method = "post" th:object= "${registration_form}" style=" max-width : 700px;margin:0 auto;">
+        <div class = "m-3">
+        	<!--  --><div class = "form-group row">
+        		<label class = "col-form-label col-4" for="register_Number" >Register Number</label>
+       		
+       		    <div class= "col-5">
+        			<input type ="number" th:field="*{register_Number}" name="register_Number" id="register_Number" required class="form-control" readonly>
+        		</div>
+            </div>
+    
+    		<div class = "form-group row">
+        		<label class = "col-form-label col-4"  for="student_Name">Student Name</label>
+        		<div class = "col-5">
+        			<input th:field="*{student_Name}"  type ="text" name="student_Name" id="student_Name" required class="form-control" readonly>
+        		</div>
+    		</div>
+    		
+    		<div class = "form-group row">
+        		<label class = "col-form-label col-4" for="department">Department</label>
+         		<div class = "col-5">
+        			<select th:field="*{department}" name="department" id="department" class ="form-control" style = "pointer-events:none;">
+			            <option value="">-----Select the Department-----</option>
+			            <option value="Electronics And Communication Engineering">Electronics And Communication Engineering</option>
+			            <option value="Computer Science Engineering">Computer Science Engineering</option>
+			            <option value="Information Technology">Information Technology</option>
+			            <option value="Civil Engineering">Civil Engineering</option>                  
+        			</select>
+        		</div>   
+    		</div>
+    		
+			<div class = "form-group row">
+			    <label class = "col-form-label col-4" for="batch">Batch</label>
+			    <div class = "col-5">
+			    	<input th:field="*{batch}" type ="number" name="batch" id="batch" required class ="form-control"  readonly>
+			    </div>
+			</div>
+
+    		<div class = "form-group row" >
+        		<label class = "col-form-label col-4" for="date_Of_Birth">Date of Birth</label>
+        		<div class = "col-5">
+        			<input th:field="*{date_Of_Birth}" type="date" name="date_Of_Birth" id="date_Of_Birth" required class="form-control" readonly>
+        		</div>
+    		</div>
+    		
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="blood_Group">Blood Group</label>
+		        <div class = "col-5">
+		        	<input th:field="*{blood_Group}" type="text" name="blood_Group" id="blood_Group" required class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="address">Address</label>
+		        <div class = "col-5">
+		        	<textarea th:field="*{address}" name="address" id="address"  required class="form-control" readonly ></textarea>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="gender">Gender</label>
+		       
+		        
+		        <input th:field="*{gender}" type="radio" name="gender" id="gender" value="Male" required disabled>
+		        
+		        <label  for="male">Male</label>
+		         
+				        <input th:field="*{gender}" type="radio" name="gender" id="gender" value="Female" required disabled>
+		        <label  for="female">Female</label>
+		       
+		
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="father_Name">Father's Name</label>
+		        <div class = "col-5">
+		        	<input th:field="*{father_Name}" type ="text" name="father_Name" id="father_Name" required  class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="mother_Name">Mother's Name</label>
+		        <div class = "col-5">
+		        	<input th:field="*{mother_Name}" type ="text" name="mother_Name" id="mother_Name" required  class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="contact_Number">Contact Number</label>
+		        <div class = "col-5">
+		        	<input th:field="*{contact_Number}" type ="number" name="contact_Number" id="contact_Number" required class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="email">Email</label>
+		        <div class = "col-5">
+		        	<input th:field="*{email}" type="email" name="email" id="email" required class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		    <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="parent_Contact_Number">Parent's Contact Number</label>
+		        <div class = "col-5">
+		        	<input  th:field="*{parent_Contact_Number}" type ="number" name="parent_Contact_Number" id="parent_Contact_Number" required class="form-control" readonly>
+		        </div>
+		    </div>
+		    
+		     </div>
+		      <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="attendance">Attendance Percentage</label>
+		        <div class = "col-5">
+		        	<input  th:field="*{attendance}" type ="text" name="attendance" id="attendance"  class="form-control" readonly>
+		        </div>
+		    </div>
+		     <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="marks">Marks Percentage</label>
+		        <div class = "col-5">
+		        	<input  th:field="*{marks}" type ="text" name="marks" id="marks"  class="form-control" readonly>
+		        </div>
+		    </div>
+		     <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="grade">Grade</label>
+		        <div class = "col-5">
+		        	<input  th:field="*{grade}"  type ="text" name="grade" id="grade" class="form-control" readonly>
+		        </div>
+		    </div>
+		     <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="result">Result</label>
+		        <div class = "col-5">
+		        	<select th:field="*{result}" name="result" id="result" class ="form-control" style = "pointer-events:none;">
+			            <option value=" ">----------</option>
+			            <option value="Pass">Pass</option>
+			            <option value="Fail">Fail</option>
+			                            
+        			</select>
+		        </div>
+		    </div>
+		     <div class = "form-group row">
+		        <label class = "col-form-label col-4" for="fees">Fees</label>
+		        <div class = "col-5">
+		        	<select th:field="*{fees}" name="fees" id="fees" class ="form-control" style = "pointer-events:none;">
+			            <option value=" ">----------</option>
+			            <option value="Paid">Paid</option>
+			            <option value="Not Paid">Not Paid</option>
+			                            
+        			</select>
+		        </div>
+		    </div>
+		    
+		    
+    
+     </form>
+     <br>
+     <div>
+     <p><b>Note:<i>If you want to change any detail please contact admin or faculty</i></b></p>
+     </div>
+     <div>
+     
+     <a   href = "/ViewAllStudentBystudent" class = "btn btn-primary">Go Back</a>
+     </div>
+     
+ </div>
+</body>
+</html>

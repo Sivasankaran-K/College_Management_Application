@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Registration</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style type="text/css">
+h2{
+    color:white;
+}
+body {
+    
+    background-image: url(images/register.jpg);
+    background-size: 100%;
+    position: relative;
+    background-attachment: fixed;
+}
+form {
+   
+  border-radius: 10px;
+  background-color: #fefefe1c;
+  padding: 15px;
+  box-shadow: 10px 10px 30px;
+  border: 2px solid rgb(254, 254, 254);
+  width: 1800px;
+  
+  }
+  label {
+	display: inline-block;
+	width: 120px;
+	margin: 5px;
+	text-align: left;
+    color: white;   
+}
+small{
+color: red;
+}
+</style>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewAbout}">About Us</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewContact}">Contact</a>
+			</ul>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/LoginPage}">Login</a>
+			</ul>
+		</div>
+
+
+	</nav>
+
+
+	<div class="container text-center">
+		<h2>Student Registration Form</h2>
+		<form action="/RegisterProcessing" method="post"
+			th:object="${registration_form}"
+			style="max-width: 700px; margin: 0 auto;">
+			<div class="m-3">
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="register_Number">Register
+						Number</label>
+
+					<div class="col-5">
+						<input type="number" 
+							name="register_Number" id="register_Number" required
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="student_Name">Student
+						Name <small>(*Only alphabet is allowed)</small> </label>
+					<div class="col-5">
+						<input type="text" name="student_Name"  pattern="[A-Za-z\s]+" 
+							required  class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="department">Department</label>
+					<div class="col-5">
+						<select name="department" id="department" class="form-control" required>
+							<option value=" ">-----Select the Department-----</option>
+							<option value="Electronics And Communication Engineering">Electronics
+								And Communication Engineering</option>
+							<option value="Computer Science Engineering">Computer
+								Science Engineering</option>
+							<option value="Information Technology">Information
+								Technology</option>
+							<option value="Civil Engineering">Civil Engineering</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="batch">Batch</label>
+					<div class="col-5">
+						<input type="number" name="batch" id="batch" required
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="date_Of_Birth">Date
+						of Birth</label>
+					<div class="col-5">
+						<input type="date" name="date_Of_Birth" id="date_Of_Birth"
+							required class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="blood_Group">Blood
+						Group</label>
+					<div class="col-5">
+						<input type="text" name="blood_Group" id="blood_Group" required
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="address">Address</label>
+					<div class="col-5">
+						<textarea name="address" id="address" required
+							class="form-control"></textarea>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="gender">Gender</label>
+					
+
+					<input type="radio" name="gender" id="department" value="Male"
+						required> <label for="male">Male</label> <input
+						type="radio" name="gender" id="department" value="Female" required>
+					<label for="female">Female</label>
+
+
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="father_Name">Father's
+						Name<small>(*Only alphabet is allowed)</small> </label>
+					<div class="col-5">
+						<input type="text" name="father_Name" id="father_Name" required pattern="[A-Za-z\s]+"
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="mother_Name">Mother's
+						Name<small>(*Only alphabet is allowed)</small> </label>
+					<div class="col-5">
+						<input type="text" name="mother_Name" id="mother_Name" required pattern="[A-Za-z\s]+" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="contact_Number">Contact
+						Number</label>
+					<div class="col-5">
+						<input type="tel" name="contact_Number" id="contact_Number" pattern="[6-9]{1}[0-9]{9}"
+							required class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="email">Email</label>
+					<div class="col-5">
+						<input type="email" name="email" id="email" required
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="parent_Contact_Number">Parent's
+						Contact Number</label>
+					<div class="col-5">
+						<input type="tel" name="parent_Contact_Number"   pattern="[6-9]{1}[0-9]{9}"
+							id="parent_Contact_Number" required class="form-control">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-form-label col-6" for="fees">Fees</label>
+					<div class="col-5" required>
+						<select name="fees" id="fees" class="form-control">
+							<option value=" ">----------</option>
+							<option value="Paid">Paid</option>
+							<option value="Not Paid">Not Paid</option>
+
+						</select>
+					</div>
+				</div>
+	
+				<div>
+					<button type="submit" class="btn btn-primary">Register</button>
+				</div>
+             </div>
+			
+		</form>
+	</div>
+</body>
+</html>

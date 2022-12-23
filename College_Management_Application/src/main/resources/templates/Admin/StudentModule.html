@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Module</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style type="text/css">
+label {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+body {
+    
+    background-image: url(images/clg2.jpeg);
+    background-size: 100%;
+    position: relative;
+}
+</style>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewAbout}">About Us</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewContact}">Contact</a>
+			</ul>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/LoginPage}">Login</a>
+			</ul>
+		</div>
+
+
+	</nav>
+	<div class="container text-center">
+		<h2>Student Module</h2>
+
+		<div class="m-3">
+
+			<a href="/GetRegistrationForm" class="btn btn-outline-primary d-grid gap-2 col-2 mx-auto">New
+				Registration</a>
+		</div>
+		<div class="m-3">
+			<a href="/ViewAllStudent" class="btn btn-outline-primary d-grid gap-2 col-2 mx-auto">View
+				Student</a>
+
+
+
+		</div>
+		<div class="m-3">
+			<a href="/AdminAccess" class="btn btn-outline-primary d-grid gap-2 col-2 mx-auto">Go Back</a>
+
+
+
+		</div>
+	</div>
+</body>
+</html>

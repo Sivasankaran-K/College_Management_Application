@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<style type="text/css">
+.about-section {
+	padding: 30px;
+	text-align: center;
+	background-color: #474e5d;
+	color: white;
+}
+
+.img {
+	background-image:
+		url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRuuqNhX35A_7BSCRZoFlXFw20uvYN7DRpo2on8aFVKdxqrxltE-mUG_A375bjY_hkIus&usqp=CAU');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin: 8px;
+}
+
+.theme {
+	text-align: center;
+	color: white;
+}
+
+.column {
+	float: left;
+	width: 33.3%;
+	margin-bottom: 16px;
+	padding: 2 100px;
+}
+
+.container {
+	padding: 0 16px;
+	background-image:
+		url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6junyfffm5Yu8wOn8brinLyi2IpLoXmrdw&usqp=CAU');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+		<a class="navbar-brand" href="/ViewAbout">Best Engineering College</a>
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewAbout}">About Us</a>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/ViewContact}">Contact</a>
+			</ul>
+		</div>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/LoginPage}">Login</a>
+			</ul>
+		</div>
+
+
+	</nav>
+	<div class="about-section">
+		<h1>Best Engineering College</h1>
+
+		<p>
+			"Education is the most powerful weapon which you can use to change
+			the world." — <em>Nelson Mandela</em>
+		</p>
+	</div>
+	<div class="img">
+		<br>
+		<h1 style="text-align: center;">
+			<em>IMAGINE</em>
+		</h1>
+		<h1 style="text-align: center;">
+			<em>THE</em>
+		</h1>
+		<h1 style="text-align: center;">
+			<em>POSSIBILITY...</em>
+		</h1>
+		<h1 style="text-align: center;">
+			<b>Be so good they can't ignore you.</b>
+		</h1>
+		<br>
+		<br>
+	</div>
+
+
+	<div class="imgs">
+		<h1 style="text-align: center;">Our Campus</h1>
+		<img
+			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA-rgKYiUrNZWEWYcj_yU0gHafzCqt2tAOYA&usqp=CAU"
+			width="400" height="300" alt="img" style="float: left" hspace="50" />
+
+
+		<img
+			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOcc8xX9kHBAiBTwGC5DgS6EpAJQcBazUK1Udczp1wzulXMVuqqx1yklh9lo7meE18AE&usqp=CAU"
+			width="400" height="300" style="float: left" hspace="50" /> <img
+			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqI3wxBwYDyjDdm4-qb9W_q2FZ7CEPIHueoQ&usqp=CAU"
+			width="400" height="300" hspace="50" /> <br>
+		<br>
+		<br>
+	</div>
+	<div class="column">
+		<div class="card">
+
+			<div class="container">
+				<h2 class="theme">Campus</h2>
+
+				<p>The infrastructure of a college plays a vital role in the
+					development of the college as the students are now focusing on the
+					labs, class rooms, etc while selecting a college. It is important
+					that the colleges have very good infrastructure with advanced
+					laboratories equipped with state of the art equipment</p>
+				<br>
+				<br>
+
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+
+			<div class="container">
+				<h2 class="theme">Library</h2>
+
+				<p>A library is said to be the heart and should of a college.Our
+					college library is housed in a big building. It has about thirty
+					two thousand books on various subjects. Students come to the
+					library and take books of their choice either for reading in the
+					library itself or for study at home.</p>
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="column">
+
+		<div class="card">
+			<div class="container">
+				<h2 class="theme">Hostel</h2>
+
+				<p>The college has two separate hostels for the Boys and Girls
+					students. Hostels accommodation is provided to the needy students
+					who come from non-commutable far-off places within the district or
+					out side.Right from having clear boundaries to CCTV cameras in the
+					corridors, your selected hostel must have top-notch security
+					installations.</p>
+				<br>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
